@@ -1,9 +1,6 @@
 import streamlit as st
 from langchain_openai import ChatOpenAI
 import os
-
-# ChatOpenAI 모델 초기화
-chat = ChatOpenAI(temperature=0)
     
 # Streamlit UI 설정
 st.set_page_config(page_title="ChatOpenAI Demo", page_icon=":robot:")
@@ -20,6 +17,9 @@ else:
     # API 키가 입력되지 않았을 경우 경고 메시지 표시
     st.info("Please add your OpenAI API key to continue.")
     st.stop()
+
+# ChatOpenAI 모델 초기화
+chat = ChatOpenAI(temperature=0)
 
 # 세션 상태 초기화
 if "messages" not in st.session_state:
